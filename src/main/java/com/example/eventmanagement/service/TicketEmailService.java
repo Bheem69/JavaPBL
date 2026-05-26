@@ -10,11 +10,13 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.time.format.DateTimeFormatter;
+import java.util.Base64;
 
 @Service
 public class TicketEmailService {
 
     private final JavaMailSender mailSender;
+    private final QrCodeService qrCodeService;
 
     @Value("${app.base-url:http://localhost:8080}")
     private String baseUrl;
@@ -22,11 +24,13 @@ public class TicketEmailService {
     @Value("${spring.mail.username:}")
     private String fromAddress;
 
+    // Set to false if mail is not configured — app still works, just no email
     @Value("${app.mail.enabled:true}")
     private boolean mailEnabled;
 
-    public TicketEmailService(JavaMailSender mailSender) {
+    public TicketEmailService(JavaMailSender mailSender, QrCodeService qrCodeService) {
         this.mailSender = mailSender;
+        this.qrCodeService = qrCodeService;
     }
 
     @Async
@@ -36,8 +40,12 @@ public class TicketEmailService {
             return;
         }
         try {
+            String scanUrl = baseUrl + "/admin/scan?ticketCode=" + booking.getTicketCode();
+            byte[] qrBytes = Base64.getDecoder().decode(
+                    qrCodeService.generateQrBase64(scanUrl, 280, 280));
+
             MimeMessage message = mailSender.createMimeMessage();
-            MimeMessageHelper helper = new MimeMessageHelper(message, false, "UTF-8");
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 
             helper.setFrom(fromAddress);
             helper.setTo(booking.getUser().getEmail());
@@ -47,6 +55,9 @@ public class TicketEmailService {
                     .format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy 'at' HH:mm"));
 
             helper.setText(buildEmailHtml(booking, eventDate), true);
+            helper.addInline("qrcode",
+                    new org.springframework.core.io.ByteArrayResource(qrBytes),
+                    "image/png");
 
             mailSender.send(message);
             System.out.println("[Mail] Ticket sent to " + booking.getUser().getEmail());
@@ -85,8 +96,9 @@ public class TicketEmailService {
                 </div>
                 <div style="border-top:2px dashed #e2e8f0;margin:0 32px;"></div>
                 <div style="text-align:center;padding:28px 32px 32px;">
-                  <p style="margin:0 0 12px;font-size:13px;color:#64748b;">Your ticket code:</p>
-                  <p style="font-family:monospace;font-size:15px;color:#475569;background:#f1f5f9;padding:10px 20px;border-radius:8px;display:inline-block;">%s</p>
+                  <p style="margin:0 0 12px;font-size:13px;color:#64748b;">&#128241; Show this QR code at the venue entrance</p>
+                  <img src="cid:qrcode" alt="Ticket QR Code"
+                       style="width:200px;height:200px;border-radius:12px;border:3px solid #f1f5f9;padding:8px;"/>
                   <p style="margin:16px 0 0;font-size:12px;color:#94a3b8;">This ticket is valid for one entry only.</p>
                 </div>
               </div>
@@ -96,7 +108,6 @@ public class TicketEmailService {
                 booking.getEvent().getTitle(), eventDate,
                 booking.getUser().getUsername(),
                 booking.getEvent().getVenue(),
-                booking.getTicketCode(),
                 booking.getTicketCode()
         );
     }

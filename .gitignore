@@ -1,0 +1,23 @@
+# Application properties (contains sensitive data)
+src/main/resources/application.properties
+
+# Maven
+target/
+*.jar
+*.war
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Logs
+*.log

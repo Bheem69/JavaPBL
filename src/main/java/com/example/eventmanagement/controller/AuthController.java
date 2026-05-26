@@ -20,6 +20,11 @@ public class AuthController {
         this.userService = userService;
     }
 
+    @GetMapping("/")
+    public String redirectToLogin() {
+        return "redirect:/login";
+    }
+
     @GetMapping("/login")
     public String showLoginPage() {
         return "login";

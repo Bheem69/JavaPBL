@@ -1,19 +1,20 @@
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/EventManagementApplication.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/config/SecurityConfig.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/controller/AuthController.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/controller/DashboardController.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/controller/EventController.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/exception/DuplicateEmailException.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/exception/DuplicateUsernameException.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/exception/GlobalExceptionHandler.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/model/Booking.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/model/Event.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/model/User.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/repository/BookingRepository.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/repository/EventRepository.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/repository/UserRepository.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/service/BookingService.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/service/CustomUserDetailsService.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/service/EventService.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/service/TicketEmailService.java
-/Users/pranjalsinghbadwal/Documents/EVENT-MANAGEMENT-UTILITY-SYSTEM_1 2/src/main/java/com/example/eventmanagement/service/UserService.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/EventManagementApplication.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/config/SecurityConfig.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/controller/AuthController.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/controller/DashboardController.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/controller/EventController.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/exception/DuplicateEmailException.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/exception/DuplicateUsernameException.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/exception/GlobalExceptionHandler.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/model/Booking.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/model/Event.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/model/User.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/repository/BookingRepository.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/repository/EventRepository.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/repository/UserRepository.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/service/BookingService.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/service/CustomUserDetailsService.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/service/EventService.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/service/QrCodeService.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/service/TicketEmailService.java
+/Users/pranjalsinghbadwal/Desktop/JFinalPBL/newGood/src/main/java/com/example/eventmanagement/service/UserService.java

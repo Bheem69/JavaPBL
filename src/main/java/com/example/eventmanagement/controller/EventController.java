@@ -4,6 +4,8 @@ import com.example.eventmanagement.model.Booking;
 import com.example.eventmanagement.model.Event;
 import com.example.eventmanagement.service.BookingService;
 import com.example.eventmanagement.service.EventService;
+import com.example.eventmanagement.service.QrCodeService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -16,11 +18,17 @@ public class EventController {
 
     private final EventService eventService;
     private final BookingService bookingService;
+    private final QrCodeService qrCodeService;
+
+    @Value("${app.base-url:http://localhost:8080}")
+    private String baseUrl;
 
     public EventController(EventService eventService,
-                           BookingService bookingService) {
+                           BookingService bookingService,
+                           QrCodeService qrCodeService) {
         this.eventService = eventService;
         this.bookingService = bookingService;
+        this.qrCodeService = qrCodeService;
     }
 
     // ─── Public / User ───────────────────────────────────────────────────────
@@ -76,7 +84,13 @@ public class EventController {
         if (!booking.getUser().getUsername().equals(userDetails.getUsername())) {
             return "redirect:/my-bookings";
         }
+        
+        // Generate QR code for the ticket
+        String scanUrl = baseUrl + "/admin/scan?ticketCode=" + booking.getTicketCode();
+        String qrBase64 = qrCodeService.generateQrBase64(scanUrl, 280, 280);
+        
         model.addAttribute("booking", booking);
+        model.addAttribute("qrBase64", qrBase64);
         return "ticket";
     }
 

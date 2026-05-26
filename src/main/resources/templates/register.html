@@ -130,13 +130,13 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    const roleUser   = document.getElementById('roleUser');
-    const roleAdmin  = document.getElementById('roleAdmin');
-    const brandIcon  = document.getElementById('brandIcon');
-    const brandInner = document.getElementById('brandIconInner');
-    const formTitle  = document.getElementById('formTitle');
-    const formSub    = document.getElementById('formSubtitle');
-    const submitBtn  = document.getElementById('submitBtn');
+    const roleUser    = document.getElementById('roleUser');
+    const roleAdmin   = document.getElementById('roleAdmin');
+    const brandIcon   = document.getElementById('brandIcon');
+    const brandInner  = document.getElementById('brandIconInner');
+    const formTitle   = document.getElementById('formTitle');
+    const formSub     = document.getElementById('formSubtitle');
+    const submitBtn   = document.getElementById('submitBtn');
 
     function updateForm() {
         const isAdmin = roleAdmin.checked;
@@ -144,7 +144,7 @@
             brandIcon.style.background = 'linear-gradient(135deg,#f43f5e,#e11d48)';
             brandInner.className = 'bi bi-shield-check text-white fs-4';
             formTitle.textContent = 'Create Admin Account';
-            formSub.textContent = 'Register a new administrator';
+            formSub.textContent = 'Register as event organizer';
             submitBtn.className = 'btn btn-submit btn-admin';
             submitBtn.innerHTML = '<i class="bi bi-shield-check me-1"></i>Create Admin Account';
         } else {

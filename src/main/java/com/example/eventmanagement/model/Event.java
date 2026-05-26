@@ -33,6 +33,9 @@ public class Event {
     @Column
     private String createdBy;
 
+    @Column(nullable = false)
+    private String status = "PUBLISHED"; // DRAFT, PUBLISHED, CANCELLED, COMPLETED
+
     public Event() {}
 
     public Long getId() { return id; }
@@ -58,4 +61,7 @@ public class Event {
 
     public String getCreatedBy() { return createdBy; }
     public void setCreatedBy(String createdBy) { this.createdBy = createdBy; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 }
